@@ -1,0 +1,121 @@
+
+<html>
+    <head> 
+
+        <title>Calculator</title>
+        
+        <style>
+
+            
+body{
+	background-color: rgba(104, 178, 207, 0.774);
+}
+.cal{
+	width: 350px;
+	margin: 120px auto;
+    
+}
+table{
+	width: 350px;
+	border-color: rgb(80, 79, 79);
+}
+td{
+	width: 200px;
+}
+button{
+	width: 100%;
+	height: 80px;
+	font-size: 25px;
+	background-color: rgba(27, 26, 26, 0.753);
+	}
+button:hover{
+    font-weight: bolder;
+}
+.demo{
+	text-align: right;
+	height: 60px;
+	font-size: 25px;
+	border-color: rgb(17, 17, 17);
+	border-width: 3px;
+	background-color: white;
+	}
+
+
+        </style>
+
+    </head>
+    <body>
+        <div class="cal">
+
+                  <h2 style="text-align: center; margin-top:-25px;">Simple WEB CALCULATOR</h2>
+
+            <table border="1" cellspacing="0">
+                <tr>
+                    <td colspan="4" class="demo" id="input">0</td>
+                </tr>
+                <tr>
+                     <td colspan="2" ><button onclick="push(this)" style="color: rgba(255, 255, 255, 0.804);">CLEAR</button></td>
+                     <td><button onclick="push(this)" style="color: rgba(255, 255, 255, 0.804);">BS</button></td>
+                     <td><button onclick="push(this)" style="color: rgba(255, 255, 255, 0.804);">/</button></td>
+                 </tr>
+                 <tr>
+                     <td><button onclick="push(this)" style="color: rgba(255, 255, 255, 0.804);">7</button></td>
+                     <td><button onclick="push(this)" style="color: rgba(255, 255, 255, 0.804);">8</button></td>
+                     <td><button onclick="push(this)" style="color: rgba(255, 255, 255, 0.804);">9</button></td>
+                     <td><button onclick="push(this)" style="color: rgba(255, 255, 255, 0.804);">*</button></td>
+                 </tr>
+                <tr>
+                     <td><button onclick="push(this)" style="color: rgba(255, 255, 255, 0.804);">4</button></td>
+                     <td><button onclick="push(this)" style="color: rgba(255, 255, 255, 0.804);">5</button></td>
+                     <td><button onclick="push(this)" style="color: rgba(255, 255, 255, 0.804);">6</button></td>
+                     <td><button onclick="push(this)" style="color: rgba(255, 255, 255, 0.804);">-</button></td>
+                 </tr>
+                 <tr>
+                     <td><button onclick="push(this)" style="color: rgba(255, 255, 255, 0.804);">3</button></td>
+                     <td><button onclick="push(this)" style="color: rgba(255, 255, 255, 0.804);">2</button></td>
+                     <td><button onclick="push(this)" style="color: rgba(255, 255, 255, 0.804);">1</button></td>
+                     <td><button onclick="push(this)" style="color: rgba(255, 255, 255, 0.804);">+</button></td>
+                 </tr>
+                 <tr>
+                     <td colspan="2"><button onclick="push(this)" style="color: rgba(255, 255, 255, 0.804);">0</button></td>
+                     <td><button onclick="push(this)" style="color: rgba(255, 255, 255, 0.804);">.</button></td>
+                     <td><button onclick="push(this)" style="color: rgba(255, 255, 255, 0.804);">=</button></td>
+                  </tr>
+            </table>
+        </div>
+        <p style="text-align: center; margin-top: -50px;">©2022 All rights reserved by chaitanya</p>
+    </body>
+
+
+    <script type="text/javascript">
+        var inputLabel= document.getElementById('input');
+        
+        function push(obj) 
+         { 
+               var pushed = obj.innerHTML; 
+               if (pushed == '=') { 
+               inputLabel.innerHTML = eval(inputLabel.innerHTML); 
+           } 
+        else if(pushed=='BS')
+        {
+               var ex=inputLabel.innerHTML
+               inputLabel.innerHTML=ex.substring(0,ex.length-1);
+        }
+        else if (pushed == 'CLEAR') 
+        { 
+            inputLabel.innerHTML = '0';
+        }
+           else 
+           {
+         if (inputLabel.innerHTML == '0') 
+         { 
+             inputLabel.innerHTML = pushed;
+         }
+         else 
+         { 
+          inputLabel.innerHTML += pushed; 
+         } 
+        }
+      }
+    </script>
+    </html>
